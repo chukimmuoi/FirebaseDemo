@@ -1,9 +1,13 @@
 package com.example.chukimmuoi.firebasedemo;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -226,6 +230,30 @@ public class EmailPasswordActivity extends BaseActivity implements View.OnClickL
         }
     }
 
+    private void getCurrentUser(){
+        FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
+
+        if(firebaseUser != null) {
+            String name  = firebaseUser.getDisplayName();
+            String email = firebaseUser.getEmail();
+            Uri photoUrl = firebaseUser.getPhotoUrl();
+            Log.e(TAG, "name: " + name + "\nemail: " + email + "\nphotoUrl: " + photoUrl);
+
+            boolean emailVerified = firebaseUser.isEmailVerified();
+            Log.e(TAG, "emailVerified: " + emailVerified);
+
+            //Id - duy nhat.
+            String uid = firebaseUser.getUid();
+            Log.e(TAG, "uid: " + uid);
+
+            Toast.makeText(EmailPasswordActivity.this, "name: " + name
+                    + "\nemail: " + email
+                    + "\nphotoUrl: " + photoUrl
+                    + "\nemailVerified: " + emailVerified
+                    + "\nuid: " + uid, Toast.LENGTH_LONG).show();
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -238,6 +266,24 @@ public class EmailPasswordActivity extends BaseActivity implements View.OnClickL
             case R.id.btn_sign_out:
                 signOut();
                 break;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_email_password, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menu_get_current_user:
+                getCurrentUser();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }
