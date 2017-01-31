@@ -87,9 +87,9 @@ public class GoogleSignInActivity extends BaseActivity
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if (firebaseUser != null) {
-                    Log.e(TAG, "onAuthStateChanged: user login = " + firebaseUser.getUid());
+                    Log.e(TAG, "On Auth State Changed: user login: " + firebaseUser.getUid());
                 } else {
-                    Log.e(TAG, "onAuthStateChanged: user logout");
+                    Log.e(TAG, "On Auth State Changed: user logout");
                 }
 
                 updateUI(firebaseUser);
@@ -129,15 +129,11 @@ public class GoogleSignInActivity extends BaseActivity
     }
 
     private void signIn() {
-        Log.e(TAG, "Sign in.");
-
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     private void signOut() {
-        Log.e(TAG, "Sign out.");
-
         mFirebaseAuth.signOut();
 
         Auth.GoogleSignInApi.signOut(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
@@ -151,8 +147,6 @@ public class GoogleSignInActivity extends BaseActivity
     }
 
     private void revokeAccess() {
-        Log.e(TAG, "Revoke Access.");
-
         mFirebaseAuth.signOut();
 
         Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(new ResultCallback<Status>() {
@@ -181,7 +175,7 @@ public class GoogleSignInActivity extends BaseActivity
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
-        Log.e(TAG, "firebaseAuthWithGoogle: account: " + account.getId());
+        Log.e(TAG, "Firebase Auth With Google: account: " + account.getId());
 
         showProgressDialog();
 
@@ -192,11 +186,11 @@ public class GoogleSignInActivity extends BaseActivity
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         boolean isSuccessful = task.isSuccessful();
 
-                        Log.e(TAG, "firebaseAuthWithGoogle: signInWithCredential "
+                        Log.e(TAG, "Firebase Auth With Google: Sign In With Credential "
                                 + String.valueOf(isSuccessful));
 
                         if (!isSuccessful) {
-                            Log.e(TAG, "firebaseAuthWithGoogle: signInWithCredential",
+                            Log.e(TAG, "Firebase Auth With Google: Sign In With Credential",
                                     task.getException());
                             Toast.makeText(GoogleSignInActivity.this, "Authentication failed",
                                     Toast.LENGTH_LONG).show();
@@ -229,7 +223,7 @@ public class GoogleSignInActivity extends BaseActivity
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.e(TAG, "onConnectionFailed: " + connectionResult);
+        Log.e(TAG, "on Connection Failed: " + connectionResult);
 
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
