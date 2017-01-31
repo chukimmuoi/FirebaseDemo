@@ -35,6 +35,10 @@
             android:label="@string/label_emailpassword"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
+        <activity
+            android:name=".GoogleSignInActivity"
+            android:label="@string/label_google_sign_in" />
+
         <service
             android:name=".service.FCMFirebaseMessagingService">
             <intent-filter>

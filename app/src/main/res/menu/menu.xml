@@ -3,4 +3,7 @@
     <item
         android:id="@+id/menu_email_password"
         android:title="Menu email password"></item>
+    <item
+        android:id="@+id/menu_google_sign_in"
+        android:title="Google sign in"></item>
 </menu>

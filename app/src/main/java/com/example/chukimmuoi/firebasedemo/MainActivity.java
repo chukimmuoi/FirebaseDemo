@@ -88,6 +88,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentEmailPassword = new Intent(MainActivity.this, EmailPasswordActivity.class);
                 startActivity(intentEmailPassword);
                 return true;
+            case R.id.menu_google_sign_in:
+                Intent intentGoogleSign = new Intent(MainActivity.this, GoogleSignInActivity.class);
+                startActivity(intentGoogleSign);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
