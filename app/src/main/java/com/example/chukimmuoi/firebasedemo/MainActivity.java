@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentGoogleSign = new Intent(MainActivity.this, GoogleSignInActivity.class);
                 startActivity(intentGoogleSign);
                 return true;
+            case R.id.menu_facebook_sign_in:
+                Intent intentFacebookSign = new Intent(MainActivity.this, FacebookLoginActivity.class);
+                startActivity(intentFacebookSign);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
