@@ -9,4 +9,7 @@
     <item
         android:id="@+id/menu_facebook_sign_in"
         android:title="Facebook sign in"></item>
+    <item
+        android:id="@+id/menu_anonymous_sign_in"
+        android:title="Anonymous sign in"></item>
 </menu>

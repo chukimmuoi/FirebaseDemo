@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentFacebookSign = new Intent(MainActivity.this, FacebookLoginActivity.class);
                 startActivity(intentFacebookSign);
                 return true;
+            case R.id.menu_anonymous_sign_in:
+                Intent intentAnonymousSign = new Intent(MainActivity.this, AnonymousAuthActivity.class);
+                startActivity(intentAnonymousSign);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
