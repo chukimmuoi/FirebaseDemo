@@ -100,6 +100,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentAnonymousSign = new Intent(MainActivity.this, AnonymousAuthActivity.class);
                 startActivity(intentAnonymousSign);
                 return true;
+            case R.id.menu_database_real_time:
+                Intent intentDatabaseRealTime = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intentDatabaseRealTime);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

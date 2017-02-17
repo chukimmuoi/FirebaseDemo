@@ -53,6 +53,22 @@
             android:label="@string/label_anonymous_auth" />
 
         <activity
+            android:name=".SignInActivity"
+            android:label="Sign In Activity" />
+
+        <activity
+            android:name=".DatabaseActivity"
+            android:label="Database Activity" />
+
+        <activity
+            android:name=".PostDetailActivity"
+            android:label="Post Detail Activity"></activity>
+
+        <activity
+            android:name=".NewPostActivity"
+            android:label="New Post Activity" />
+
+        <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"

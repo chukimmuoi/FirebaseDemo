@@ -12,4 +12,7 @@
     <item
         android:id="@+id/menu_anonymous_sign_in"
         android:title="Anonymous sign in"></item>
+    <item
+        android:id="@+id/menu_database_real_time"
+        android:title="Database real time"></item>
 </menu>

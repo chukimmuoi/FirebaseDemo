@@ -66,9 +66,9 @@ public class AnonymousAuthActivity extends BaseActivity implements View.OnClickL
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
                 if (firebaseUser != null) {
-                    Log.e(TAG, "onCreate: onAuthStateChanged: User login: " + firebaseUser.getUid());
+                    Log.e(TAG, "onCreate: onAuthStateChanged: Users login: " + firebaseUser.getUid());
                 } else {
-                    Log.e(TAG, "onCreate: onAuthStateChanged: User logout: ");
+                    Log.e(TAG, "onCreate: onAuthStateChanged: Users logout: ");
 
                 }
 

@@ -17,3 +17,13 @@
 #}
 -keepattributes Signature
 -keepattributes *Annotation*
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+
+-keep class com.example.chukimmuoi.firebasedemo.viewholder.** {
+    *;
+}
+
+-keepclassmembers class com.example.chukimmuoi.firebasedemo.object.** {
+    *;
+}
