@@ -2,6 +2,7 @@ package com.example.chukimmuoi.firebasedemo;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
@@ -34,6 +35,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
  * Created by chukimmuoi on 1/28/17.
  */
 
+@Keep
 public class EmailPasswordActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = EmailPasswordActivity.class.getSimpleName();

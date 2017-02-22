@@ -1,6 +1,7 @@
 package com.example.chukimmuoi.firebasedemo;
 
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,6 +33,7 @@ import com.google.firebase.database.ValueEventListener;
  * Created by chukimmuoi on 2/10/17.
  */
 
+@Keep
 public class PostDetailActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = PostDetailActivity.class.getSimpleName();
@@ -149,6 +151,7 @@ public class PostDetailActivity extends BaseActivity implements View.OnClickList
 
     private void postComment() {
         final String uid = getUid();
+        //TODO: Read data once, not change.
         FirebaseDatabase.getInstance().getReference().child(Users.TAG).child(uid)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

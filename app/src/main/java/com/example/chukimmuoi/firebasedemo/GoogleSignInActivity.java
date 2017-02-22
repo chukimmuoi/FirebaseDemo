@@ -2,6 +2,7 @@ package com.example.chukimmuoi.firebasedemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -37,6 +38,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
  * Created by chukimmuoi on 1/31/17.
  */
 
+@Keep
 public class GoogleSignInActivity extends BaseActivity
         implements View.OnClickListener,
         GoogleApiClient.OnConnectionFailedListener {

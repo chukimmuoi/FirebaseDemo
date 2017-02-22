@@ -102,7 +102,7 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Posts, PostViewHolder> 
                 }
                 if (posts.stars.containsKey(mContext.getUid())) {
                     posts.starCount = posts.starCount - 1;
-                    posts.stars.get(mContext.getUid());
+                    posts.stars.remove(mContext.getUid());
                 } else {
                     posts.starCount = posts.starCount + 1;
                     posts.stars.put(mContext.getUid(), true);

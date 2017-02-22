@@ -2,6 +2,7 @@ package com.example.chukimmuoi.firebasedemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * Created by chukimmuoi on 2/8/17.
  */
 
+@Keep
 public class DatabaseActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = DatabaseActivity.class.getSimpleName();

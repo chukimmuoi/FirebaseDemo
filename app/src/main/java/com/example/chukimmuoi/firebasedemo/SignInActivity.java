@@ -2,6 +2,7 @@ package com.example.chukimmuoi.firebasedemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -30,6 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by chukimmuoi on 2/11/17.
  */
 
+@Keep
 public class SignInActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = SignInActivity.class.getSimpleName();

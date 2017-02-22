@@ -2,6 +2,7 @@ package com.example.chukimmuoi.firebasedemo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -36,6 +37,7 @@ import com.google.firebase.auth.FirebaseUser;
  * Created by chukimmuoi on 2/4/17.
  */
 
+@Keep
 public class FacebookLoginActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = FacebookLoginActivity.class.getSimpleName();
