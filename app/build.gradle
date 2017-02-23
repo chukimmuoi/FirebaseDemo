@@ -7,20 +7,45 @@ android {
         applicationId "com.example.chukimmuoi.firebasedemo"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 20170223
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        config {
+            keyAlias 'FirebaseDemo'
+            keyPassword 'FirebaseDemo'
+            storeFile file('/Users/chukimmuoi/AndroidStudioProjects/KeyStore/FirebaseDemo.jks')
+            storePassword 'FirebaseDemo'
+        }
     }
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    applicationVariants.all { variant ->
+        configApkFileName(variant, defaultConfig)
+    }
+}
+
+def configApkFileName(variant, defaultConfig) {
+    variant.outputs.each { output ->
+        if (variant.buildType.name == android.buildTypes.release.name) {
+            def file = output.outputFile
+            output.outputFile = new File(file.parentFile, "FirebaseDemo(" + defaultConfig.versionCode
+                    + "_" + defaultConfig.versionName + ").apk")
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -28,18 +53,13 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:cardview-v7:25.0.1'
-
     compile 'com.google.android.gms:play-services-auth:10.0.1'
-
     compile 'com.firebaseui:firebase-ui-database:1.0.0'
-
     compile 'com.google.firebase:firebase-core:10.0.1'
     compile 'com.google.firebase:firebase-messaging:10.0.1'
     compile 'com.google.firebase:firebase-auth:10.0.1'
     compile 'com.google.firebase:firebase-database:10.0.1'
-
     compile 'com.facebook.android:facebook-android-sdk:4.9.0'
-
     testCompile 'junit:junit:4.12'
 }
 

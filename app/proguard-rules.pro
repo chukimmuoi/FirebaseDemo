@@ -27,3 +27,11 @@
 -keepclassmembers class com.example.chukimmuoi.firebasedemo.object.** {
     *;
 }
+
+-assumenosideeffects class android.util.Log {
+public static *** v(...);
+public static *** d(...);
+public static *** i(...);
+public static *** w(...);
+public static *** e(...);
+}
