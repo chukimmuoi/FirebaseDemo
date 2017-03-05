@@ -65,7 +65,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
 
         mEtPasswordField = (EditText) findViewById(R.id.field_password);
 
-        mBtnSignIn = (Button) findViewById(R.id.button_sign_in);
+        mBtnSignIn = (Button) findViewById(R.id.btn_sign_in);
         mBtnSignIn.setOnClickListener(this);
 
         mBtnSignUp = (Button) findViewById(R.id.button_sign_up);
@@ -89,7 +89,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_sign_in:
+            case R.id.btn_sign_in:
                 signIn();
                 break;
             case R.id.button_sign_up:

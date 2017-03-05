@@ -53,4 +53,25 @@
     <string name="heading_recent">Recent</string>
     <string name="heading_my_posts">My Posts</string>
     <string name="heading_my_top_posts">My Top Posts</string>
+
+    <!--START: Storage-->
+    <string name="sign_in_prompt">Sign In to begin</string>
+    <string name="sign_in_anonymously">Sign In</string>
+    <string name="take_photo_prompt">Upload a Photo</string>
+    <string name="camera_button_text">Upload</string>
+    <string name="label_link">Link to Uploaded File</string>
+    <string name="label_download">Download File</string>
+    <string name="download">Download</string>
+
+    <string name="progress_downloading">Downloading…</string>
+    <string name="progress_uploading">Uploading…</string>
+
+    <string name="download_success">Download finished</string>
+    <string name="download_failure">Download failure</string>
+    <string name="upload_success">Upload finished</string>
+    <string name="upload_failure">Upload failed</string>
+
+    <string name="success">Success</string>
+    <string name="progress_auth">Signing In…</string>
+    <!--END: Storage-->
 </resources>

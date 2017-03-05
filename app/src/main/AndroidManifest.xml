@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -75,6 +77,10 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             tools:replace="android:theme" />
 
+        <activity
+            android:name=".FirebaseStorageActivity"
+            android:label="Firebase Storage Activity" />
+
         <service android:name=".service.FCMFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
@@ -86,6 +92,15 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
             </intent-filter>
         </service>
+
+        <service
+            android:name=".service.FSDownloadService"
+            android:exported="false"/>
+
+        <service
+            android:name=".service.FSUploadService"
+            android:exported="false" />
+
     </application>
 
 </manifest>

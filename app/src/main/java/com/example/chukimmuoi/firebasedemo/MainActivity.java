@@ -106,6 +106,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentDatabaseRealTime = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(intentDatabaseRealTime);
                 return true;
+            case R.id.menu_storage:
+                Intent intentStorage = new Intent(MainActivity.this, FirebaseStorageActivity.class);
+                startActivity(intentStorage);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
